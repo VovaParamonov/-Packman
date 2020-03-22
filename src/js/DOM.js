@@ -3,7 +3,7 @@ import heartSrc from "../images/interface/heart.png"
 export default class ClassDOM {
     constructor() {
         this.$gameWindow = document.querySelector(".canvasWrapper");
-        this.$interface = document.querySelector(".interface");
+        this.$interface = document.querySelector(".live_interface");
         this.$playerInfoBlocks = [];
 
     }
@@ -46,8 +46,9 @@ export default class ClassDOM {
             $playerPicture.src = player.sprite.src;
             $playerPicture.className = `player_info__avatar`;
             $playerInfo__picture_progressBar.className = `player_info__avatar_progress_bar`;
-            $playerInfo__pictureWrapper.append($playerPicture);
+
             $playerInfo__pictureWrapper.append($playerInfo__picture_progressBar);
+            $playerInfo__pictureWrapper.append($playerPicture);
 
             $playerInfo__playerData.className = `player_info__player_data`;
             $playerInfo__nickname.textContent = player.nickName;
