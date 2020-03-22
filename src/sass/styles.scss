@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+
+
+  //grid-template-columns: 65% 35%;
+  //grid-template-rows: auto;
+  //height: 100vh;
+
+  //grid-gap: 10px;
+
+  height: 100vh;
+
+  background: rgb(22,33,61);
+  background: linear-gradient(45deg, rgba(22,33,61,1) 0%, rgba(32,52,93,1) 68%);
+
+  color: #fff;
+}
+
+.global_wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.canvasWrapper {
+  position: relative;
+
+  &.pause {
+    &::after {
+      content: 'Pause';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      color: wheat;
+      position: absolute;
+      width: 920px;
+      height: 680px;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%);
+      background-color: black;
+      z-index: 9;
+      opacity: 0.4;
+    }
+  }
+}
+
+#canvas {
+  //border: 2px solid #b9b9b9;
+  //box-shadow: 0 0 20px 5px #383838;
+  display: block;
+  margin: 0 auto;
+  box-sizing: content-box;
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+
+  position: relative;
+
+
+  //transform: rotateY(360deg);
+
+}
+
+// Interface
+
+.interface {
+  //border: 2px solid #ffffff;
+  padding: 10px 30px;
+
+  position: relative;
+
+  flex-grow: 1;
+
+  margin-left: 15px;
+
+  //&::after {
+  //  content: '';
+  //  display: block;
+  //  position: absolute;
+  //  left: 10px;
+  //  top: 10px;
+  //  width: 25px;
+  //  height: 25px;
+  //  background-color: red;
+  //  z-index: 100;
+  //}
+}
+
+.interface__title {
+  text-align: center;
+  font-size: 40px;
+
+  text-shadow: -5px 3px 0 #0030ff;
+
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.player_info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.player_info__avatar_wrapper {
+  background-color: #fff798;
+  padding: 8px;
+  border-radius: 10px;
+  position: relative;
+  width: 70px;
+  height: 70px;
+
+  box-shadow: -4px 4px 0 #d7569c;
+
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #d7569c;
+    left: -4px;
+    bottom: -4px;
+    display: block;
+  }
+}
+
+.player_info__avatar {
+  width: 100%;
+  height: 100%;
+}
+
+.player_info__avatar_progress_bar {
+  transition: width 0.3s;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: black;
+  opacity: 0.6;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.player_info__player_data {
+  align-self: stretch;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  margin-left: 20px;
+}
+
+.player_data__nickname {
+  font-weight: lighter;
+}
+
+.player_data__heaths {
+  display: flex;
+  align-items: center;
+}
+
+img.heath {
+  height: 15px;
+  margin-right: 3px
+}
+
+
+.player_info__reborn_counter {
+  margin-left: 20px;
+  display: none;
+
+}

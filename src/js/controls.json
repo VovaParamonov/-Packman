@@ -1,0 +1,19 @@
+{
+  "global": {
+    "pause": "Escape"
+  },
+  "player1": {
+    "up": "ArrowUp",
+    "right": "ArrowRight",
+    "down": "ArrowDown",
+    "left": "ArrowLeft",
+    "stop": "Space"
+  },
+  "player2": {
+    "up": "KeyW",
+    "right": "KeyD",
+    "down": "KeyS",
+    "left": "KeyA",
+    "stop": "ControlLeft"
+  }
+}
