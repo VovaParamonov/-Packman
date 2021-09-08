@@ -39,14 +39,6 @@ const config = {
         'css-loader',
         {
           loader: 'postcss-loader',
-          options: {
-            plugins: [
-              isProduction ? require('cssnano') : () => {},
-              require('autoprefixer')({
-                browsers: ['last 2 versions']
-              })
-            ]
-          }
         },
         'sass-loader'
       ]
